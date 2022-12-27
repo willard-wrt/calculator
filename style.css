@@ -1,0 +1,49 @@
+.title {
+text-align: center; 
+}
+
+.title h1 {
+font-size: 45px;
+margin: 20px 10px 0px; 
+}
+
+h3 {
+font-weight: 100;
+}
+
+main {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.calculator {
+padding: 20px;
+background-color: darkgray;
+width: 400px;
+margin-top: 55px;  
+border: black solid 2px;
+box-shadow: 5px 10px #3f3d3d;
+border-radius: 10px;
+box-sizing: border-box;
+
+}
+
+.display {
+background-color: #c8d4ce;
+height: 70px;
+margin-bottom: 20px;
+padding: 10px 20px;
+box-sizing: border-box;
+}
+
+.calculator .buttons {
+display: grid;    
+grid-template-columns: repeat(4, 1fr);
+grid-gap: 10px;    
+}
+
+button {
+padding: 20px;    
+border-radius: 8px;
+}
