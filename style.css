@@ -18,22 +18,24 @@ align-items: center;
 }
 
 .calculator {
-padding: 20px;
-background-color: darkgray;
+padding: 22px;
+background-color: #fafafa;
 width: 400px;
 margin-top: 55px;  
-border: black solid 2px;
-box-shadow: 5px 10px #3f3d3d;
+border: rgb(161, 161, 161) solid 2px;
+box-shadow: 5px 10px 5px #3f3d3d;
 border-radius: 10px;
 box-sizing: border-box;
 
 }
 
 .display {
-background-color: #c8d4ce;
-height: 70px;
+background-color: #dae2de;
+height: 120px;
+margin-top: 12px;
 margin-bottom: 20px;
 padding: 10px 20px;
+box-shadow: 2px -3px 2px  #414e43;
 box-sizing: border-box;
 }
 
@@ -43,7 +45,46 @@ grid-template-columns: repeat(4, 1fr);
 grid-gap: 10px;    
 }
 
-button {
-padding: 20px;    
+.buttons {
+padding: 10px;    
+}
+button {  
 border-radius: 8px;
+}
+
+.del, .clear {
+padding: 13px;
+font-size: 22px;
+color: #302c2c;    
+}
+
+.one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .zero, .decimal {
+padding: 5px;    
+font-size: 30px;
+width: 75px;
+background-color: #858181;
+color: whitesmoke;
+
+} 
+
+.plus, .minus, .multiply, .divide, .equal {
+
+padding: 10px;    
+font-size: 35px;
+border-radius: 45%;
+background-color: white;
+}
+
+.del {
+
+background-color: #faffb4;
+grid-column: 4 /-1;
+
+   
+}
+
+.clear {
+background-color: #ffa7a7;
+grid-column: span 2;
+ 
 }
