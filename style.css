@@ -30,13 +30,25 @@ box-sizing: border-box;
 }
 
 .display {
-background-color: #dae2de;
-height: 120px;
+background-color: #eaf0ed;
 margin-top: 12px;
 margin-bottom: 20px;
 padding: 10px 20px;
 box-shadow: 2px -3px 2px  #414e43;
 box-sizing: border-box;
+word-wrap: break-word;
+}
+
+.display-top {
+height: 40px;
+font-size: 20px;    
+}
+
+.display-main {
+text-align: end;
+padding-top: 5px;
+min-height: 55px;
+font-size: 48px;
 }
 
 .calculator .buttons {
@@ -48,9 +60,13 @@ grid-gap: 10px;
 .buttons {
 padding: 10px;    
 }
+
 button {  
 border-radius: 8px;
+cursor: pointer;
 }
+
+
 
 .del, .clear {
 padding: 13px;
