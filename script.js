@@ -22,7 +22,7 @@ operatorBtn.forEach((button) => button.addEventListener('click', () => setOperat
 
 
 function keyboardInputHandler(e) {   
-if (e.key >= 0 && e.key <= 9) inputNum(e.key);
+if (e.key >= '0' && e.key <= '9') inputNum(e.key);
 if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/') setOperation(convertOperator(e.key));
 if (e.key === '=' || e.key === 'Enter') result();
 if (e.key === '.') decimal();
