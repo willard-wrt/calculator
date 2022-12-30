@@ -16,14 +16,32 @@ delBtn.onclick = del;
 resultBtn.onclick = result;
 decimalBtn.onclick = decimal;
 
-
+window.addEventListener('keydown', keyboardInputHandler);
 numberBtn.forEach((button) => button.addEventListener('click', () => inputNum(button.textContent)));
 operatorBtn.forEach((button) => button.addEventListener('click', () => setOperation(button.textContent)));
 
-function  resetScreen() {
+
+function keyboardInputHandler(e) {   
+if (e.key >= 0 && e.key <= 9) inputNum(e.key);
+if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/') setOperation(convertOperator(e.key));
+if (e.key === '=' || e.key === 'Enter') result();
+if (e.key === '.') decimal();
+if (e.key === 'Backspace') del();
+if (e.key === 'Escape') clear();
+}
+
+function convertOperator(kbOperator) {
+if (kbOperator === '+') return '+';
+if (kbOperator === '-') return '-';
+if (kbOperator === '*') return '×';
+if (kbOperator === '/') return '÷';
+}
+
+
+
+function resetScreen() {
 displayMain.textContent = "";    
 mustResetScreen = false;    
-
 }
 
 function setOperation(operator) {
