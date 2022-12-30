@@ -14,6 +14,9 @@ let secondOperand = "";
 clearBtn.onclick = clear;
 delBtn.onclick = del;
 resultBtn.onclick = result;
+decimalBtn.onclick = decimal;
+
+
 numberBtn.forEach((button) => button.addEventListener('click', () => inputNum(button.textContent)));
 operatorBtn.forEach((button) => button.addEventListener('click', () => setOperation(button.textContent)));
 
@@ -41,20 +44,27 @@ storedOperation = null;
 }
     
 function operate(operator,a,b){
-a =  parseInt(a);
-b =  parseInt(b);  
+a =  parseFloat(a);
+b =  parseFloat(b);  
     switch(operator) {
     case '+':
-    return plus(a,b); 
+    return round(plus(a,b)); 
     case '-':
-    return minus(a,b);
+    return round(minus(a,b));
     case '×':
-    return multiply(a,b);
+    return round(multiply(a,b));
     case '÷':
-    return divide(a,b);        
+    if(b == 0) {    
+    mustResetScreen = true; 
+    return "cant divide by 0";   
+    } else return round(divide(a,b));         
     default: return null
     }
    
+}
+
+function round(num){
+return Math.round(num * 1000) / 1000;   
 }
 
 function clear() {   
@@ -69,8 +79,15 @@ function del() {
 displayMain.textContent = displayMain.textContent.toString().slice(0, -1)
 }
 
+function decimal() {
+if (displayMain.textContent.indexOf(".") == -1) {    
+displayMain.textContent += "."; }
+else return;
+}
+
+
 function inputNum(num) {
-if(displayMain.textContent == 0 || mustResetScreen === true) resetScreen();   
+if(displayMain.textContent === "0" || mustResetScreen === true) resetScreen();   
 displayMain.textContent += num;    
 }
 
